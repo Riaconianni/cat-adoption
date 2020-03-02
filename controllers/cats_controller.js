@@ -58,9 +58,9 @@ const deleteCat = (catId) => {
         console.log(err);
         return reject(err);
       } else if (catdata.affectedRows === 0) {
-        return resolve({message: "Couldn't find a cat with that id!"});
+        return resolve({message: "Couldn't find a cat with that id!", code: 404});
       }
-      resolve({message: "Cat deleted Successfully!"});
+      resolve({message: "Cat deleted Successfully!", code:200});
     });
   });
 };
